@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.1001.7",
+    "@angular/cli": "~10.1.7",
+    "@angular/compiler-cli": "~10.1.6",
     "@angular/animations": "~10.1.6",
     "@angular/common": "~10.1.6",
     "@angular/compiler": "~10.1.6",
@@ -24,9 +28,6 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1001.7",
-    "@angular/cli": "~10.1.7",
-    "@angular/compiler-cli": "~10.1.6",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
