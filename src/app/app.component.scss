@@ -6,14 +6,13 @@ video, iframe {
     background-color: #0062cc !important;
 }
 .content-list{
-    height: 500px;
+    height: 650px;
     overflow: auto;
 }
-.youtube-player{
-    iframe{
-        width: 100% !important;
-        height: 300px !important;
-    }
+iframe{
+    width: 100% !important;
+    height: 500px !important;
+    padding: 0;
 }
 .cursor-pointer{
     cursor: pointer;

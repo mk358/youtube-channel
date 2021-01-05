@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxYoutubePlayerModule.forRoot() 
+    NgxYoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

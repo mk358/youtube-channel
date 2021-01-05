@@ -5,14 +5,16 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 pt-5 pb-5 pl-5">
-      <div class="row">
+    <div class="col-md-8 pt-5 pb-5">
+      <div class="row" *ngIf="currentID != null">
         <!-- <video controls>
           <source src="http://www.youtube.com/watch?v={{selectedVideo?.id}}">
           Your browser does not support the video tag.
         </video> -->
         <!-- <iframe src="https://www.youtube.com/embed/{{selectedVideo?.id}}"></iframe> -->
-        <youtube-player width="100%" height="300px" class="col-md-12" [videoId]="selectedVideo?.id"></youtube-player>
+        <iframe [src]='safeURL(currentID)' frameborder="0" class="col-md-12" allowfullscreen></iframe>
+        <!-- <youtube-player width="100%" height="300px" class="col-md-12" [videoId]="currentID"></youtube-player> -->
+        <!-- {{currentID}} -->
       </div>
       <div class="row">
         <div class="container p-3 my-3 bg-light text-black">
@@ -24,7 +26,7 @@
     </div>
     <div class="col-md-4 mt-5 pl-2 pr-2 content-list">
       <div class="card bg-light text-dark mt-2">
-        <div class="card-body" *ngFor="let video of videoItems" (click)="selectedVideo = video">
+        <div class="card-body" *ngFor="let video of videoItems" (click)="currentID=null;selectedVideo = video;currentID=video.id">
           <img class="cursor-pointer" [src]="video.snippet.thumbnails.default.url" alt="video.snippet.title" />
           <h6 class="cursor-pointer">{{video.snippet.title}}</h6>
           <div>{{video.snippet.publishedAt | date: 'dd-MMM-yyyy HH:mm'}}</div>

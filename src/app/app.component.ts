@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AppService } from './app.service';
 
 @Component({
@@ -11,8 +12,12 @@ export class AppComponent {
   videoIds: any = [];
   videoItems: any = [];
   selectedVideo: any;
-  constructor(private service: AppService) {
+  currentID: any;
+  constructor(private service: AppService, private san: DomSanitizer) {
     this.init();
+  }
+  safeURL(currentID){
+    return this.san.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+currentID);
   }
   init() {
     this.service.getVideos().subscribe((res: any) => {
@@ -29,6 +34,7 @@ export class AppComponent {
           if (vids.items) {
             this.videoItems = this.videoItems.concat(vids.items);
             this.selectedVideo = this.videoItems[0];
+            this.currentID = this.selectedVideo.id;
           }
         })
       }
