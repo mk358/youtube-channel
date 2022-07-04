@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  youtubeKey: "AIzaSyD7y7jnVbwpmd4anCP013QR6FEwH9gTTwk",
+  youtubeKey: "AIzaSyAkWCjEr5ncs01ZWY59ISObZY1Eijp_HaE",
   apiURL: "https://www.googleapis.com/youtube/v3/",
   channelID: "UCQDrbdVJtOEwa8dNvWJ4EaQ"
 };

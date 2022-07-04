@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 import { AppComponent } from './app.component';
 
@@ -11,8 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    NgxYoutubePlayerModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
